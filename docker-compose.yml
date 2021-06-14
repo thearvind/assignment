@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: webserver1
+    restart: unless-stopped
+    ports:
+      - 82:80
+
+    volumes:
+   #   - /opt/index.html:/usr/share/nginx/html
+       - $PWD:/usr/share/nginx/html
